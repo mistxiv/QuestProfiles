@@ -1,0 +1,363 @@
+-- Author: mistxiv
+-- https://na.finalfantasyxiv.com/lodestone/special/2023/The_Rising/eykg76bc2d
+local multiRefObjects = {}
+local obj1 = {
+    ["names"] = {["en"] = "2023 The Rising"},
+    ["misc"] = {
+        [1] = {
+            ["condition"] = {
+                ["QuestCompleted(4766)"] = true, -- What Drives Us
+                ["QuestCompleted(4780)"] = true -- Preserving the Future
+            },
+            ["notes"] = {[1] = "2023 The Rising quests complete."},
+            ["type"] = "endprofile"
+        }
+    },
+    ["quests"] = {
+        [4765] = {
+            ["level"] = 15,
+            ["name"] = "Siblings Rising",
+            ["prereq"] = false,
+            ["steps"] = {
+                [1] = {
+                    ["id"] = 1045526, -- Kipih Jakkya
+                    ["mapid"] = 130,
+                    ["pos"] = {["x"] = -56.05, ["y"] = 4.00, ["z"] = -126.63},
+                    ["type"] = "start",
+                    ["conversationindex"] = 1
+                },
+                [2] = { -- Gather information at the Ruby Road Exchange. 1/3
+                    ["index"] = 1,
+                    ["condition"] = {
+                        ["I8A"] = 0,
+                        ["I8F"] = 0,
+                        ["I8FH"] = 0,
+                        ["I8AL"] = 0
+                    },
+                    ["complete"] = {
+                        ["I8A"] = 1,
+                        ["I8F"] = 32,
+                        ["I8FH"] = 2,
+                        ["I8AL"] = 1
+                    },
+                    ["id"] = 1045529, -- Midlander Rising Attendant
+                    ["mapid"] = 130,
+                    ["pos"] = {["x"] = -32.46, ["y"] = 4.00, ["z"] = -145.56},
+                    ["type"] = "interact"
+                },
+                [3] = { -- Gather information at the Ruby Road Exchange. 2/3
+                    ["condition"] = {
+                        ["I8A"] = 1,
+                        ["I8F"] = 32,
+                        ["I8FH"] = 2,
+                        ["I8AL"] = 1
+                    },
+                    ["complete"] = {
+                        ["I8A"] = 2,
+                        ["I8F"] = 160,
+                        ["I8FH"] = 10,
+                        ["I8AL"] = 2
+                    },
+                    ["index"] = 1,
+                    ["id"] = 1045527, -- Highlander Adventurer
+                    ["mapid"] = 130,
+                    ["pos"] = {["x"] = -21.47, ["y"] = 9.00, ["z"] = -85.86},
+                    ["type"] = "interact"
+                },
+                [4] = { -- Gather information at the Ruby Road Exchange. 3/3
+                    ["condition"] = {
+                        ["I8A"] = 2,
+                        ["I8F"] = 160,
+                        ["I8FH"] = 10,
+                        ["I8AL"] = 2
+                    },
+                    ["complete"] = {["step"] = 2},
+                    ["index"] = 1,
+                    ["id"] = 1045528, -- Bran
+                    ["mapid"] = 130,
+                    ["pos"] = {["x"] = -22.51, ["y"] = 10.20, ["z"] = -44.42},
+                    ["type"] = "interact"
+                },
+                [5] = { -- Speak with the wandering minstrel at the Gold Court.
+                    ["complete"] = {["step"] = 3},
+                    ["index"] = 2,
+                    ["id"] = 1045532, -- Wandering Minstrel
+                    ["mapid"] = 131,
+                    ["pos"] = {["x"] = 0.90, ["y"] = 15.00, ["z"] = 9.96},
+                    ["type"] = "interact"
+                },
+                [6] = { -- Speak with Kipih Jakkya in front of the Quicksand.
+                    ["complete"] = {["step"] = 4},
+                    ["index"] = 3,
+                    ["id"] = 1045575, -- Kipih Jakkya
+                    ["mapid"] = 130,
+                    ["pos"] = {["x"] = -6.12, ["y"] = 8.00, ["z"] = -110.92},
+                    ["type"] = "interact"
+                },
+                [7] = { -- Speak with Kipih Jakkya at Black Brush Station.
+                    ["complete"] = {["step"] = 5},
+                    ["index"] = 4,
+                    ["id"] = 1045576, -- Kipih Jakkya
+                    ["mapid"] = 141,
+                    ["pos"] = {["x"] = -17.04, ["y"] = -2.05, ["z"] = -142.99},
+                    ["type"] = "interact"
+                },
+                [8] = { -- Speak with the wandering minstrel at the Gold Court.
+                    ["condition"] = {["IsOnMap(131)"] = true},
+                    ["complete"] = {["step"] = 255},
+                    ["index"] = 5,
+                    ["id"] = 1045532, -- Wandering Minstrel
+                    ["mapid"] = 131,
+                    ["pos"] = {["x"] = 0.90, ["y"] = 15.00, ["z"] = 9.96},
+                    ["type"] = "interact"
+                },
+                [9] = { -- Speak with Kipih Jakkya.
+                    ["index"] = 255,
+                    ["id"] = 1045531, -- Kipih Jakkya
+                    ["mapid"] = 131,
+                    ["pos"] = {["x"] = -0.66, ["y"] = 15.00, ["z"] = 9.69},
+                    ["type"] = "complete"
+                }
+            }
+        },
+        [4766] = {
+            ["level"] = 15,
+            ["name"] = "What Drives Us",
+            ["prereq"] = {["QuestCompleted(4765)"] = true},
+            ["steps"] = {
+                [1] = {
+                    ["id"] = 1045531, -- Kipih Jakkya
+                    ["mapid"] = 131,
+                    ["pos"] = {["x"] = -0.66, ["y"] = 15.00, ["z"] = 9.69},
+                    ["type"] = "start"
+                },
+                [2] = { -- Speak with Nhagi'a Jakkya at the Sapphire Avenue Exchange.
+                    ["complete"] = {["step"] = 2},
+                    ["index"] = 1,
+                    ["id"] = 1045537, -- Nhagi'a Jakkya
+                    ["mapid"] = 131,
+                    ["pos"] = {["x"] = 149.68, ["y"] = 4.01, ["z"] = -10.57},
+                    ["type"] = "interact",
+                    ["conversationindex"] = 1
+                },
+                [3] = { -- Speak with Nhagi'a Jakkya at the Quicksand.
+                    ["complete"] = {["step"] = 3},
+                    ["index"] = 2,
+                    ["id"] = 1045539, -- Nhagi'a Jakkya
+                    ["mapid"] = 130,
+                    ["pos"] = {["x"] = 10.06, ["y"] = 7.00, ["z"] = -89.89},
+                    ["type"] = "interact"
+                },
+                [4] = { -- Speak with Nhagi'a Jakkya again.
+                    ["complete"] = {["step"] = 4},
+                    ["index"] = 3,
+                    ["id"] = 1045538, -- Nhagi'a Jakkya
+                    ["mapid"] = 130,
+                    ["pos"] = {["x"] = -6.09, ["y"] = 8.00, ["z"] = -111.13},
+                    ["type"] = "interact"
+                },
+                [5] = { -- Speak with the wandering minstrel at the Gold Court.
+                    ["complete"] = {["step"] = 5},
+                    ["index"] = 4,
+                    ["id"] = 1045532, -- Wandering Minstrel
+                    ["mapid"] = 131,
+                    ["pos"] = {["x"] = 0.90, ["y"] = 15.00, ["z"] = 9.96},
+                    ["type"] = "interact"
+                },
+                [6] = { -- Find the letter with a blue chocobo drawing.
+                    ["complete"] = {["step"] = 6},
+                    ["index"] = 5,
+                    ["id"] = 2013391, -- Letter with a Blue Chocobo Drawing
+                    ["mapid"] = 131,
+                    ["pos"] = {["x"] = 9.93, ["y"] = 16.31, ["z"] = -18.94},
+                    ["type"] = "interact"
+                },
+                [7] = { -- Deliver the letter with a blue chocobo drawing to Nhagi'a Jakkya.
+                    ["complete"] = {["step"] = 7},
+                    ["index"] = 6,
+                    ["id"] = 1045525, -- Nhagi'a Jakkya
+                    ["mapid"] = 131,
+                    ["pos"] = {["x"] = -3.77, ["y"] = 15.00, ["z"] = 7.43},
+                    ["type"] = "interact",
+                    ["itemturnin"] = true,
+                    ["itemturninid"] = {
+                        [1] = 2003462 -- Letter with a Blue Chocobo Drawing
+                    }
+                },
+                [8] = { -- Speak with Nhagi'a Jakkya.
+                    ["complete"] = {["step"] = 255},
+                    ["index"] = 7,
+                    ["id"] = 1045540, -- Nhagi'a Jakkya
+                    ["mapid"] = 131,
+                    ["pos"] = {["x"] = 100.33, ["y"] = 12.00, ["z"] = 67.80},
+                    ["type"] = "interact"
+                },
+                [9] = { -- Speak with the wandering minstrel at the Ruby Road Exchange.
+                    ["index"] = 255,
+                    ["id"] = 1045541, -- Wandering Minstrel
+                    ["mapid"] = 130,
+                    ["pos"] = {["x"] = -21.16, ["y"] = 10.00, ["z"] = -48.84},
+                    ["type"] = "complete"
+                }
+
+            }
+        },
+        [4779] = {
+            ["level"] = 50,
+            ["name"] = "Remembering the Past",
+            ["prereq"] = {
+                ["QuestCompleted(524)"] = true -- The Ultimate Weapon
+            },
+            ["steps"] = {
+                [1] = {
+                    ["id"] = 1045615, -- Nananji
+                    ["mapid"] = 130, -- Ul'dah - Steps of Nald
+                    ["pos"] = {["x"] = -115.8, ["y"] = 4, ["z"] = -101},
+                    ["type"] = "start",
+                    ["conversationindex"] = 1
+                },
+                [2] = { -- Speak with Nananji at Camp Drybone.
+                    ["id"] = 1045616, -- Nananji
+                    ["mapid"] = 145, -- Eastern Thanalan
+                    ["pos"] = {["x"] = -379.78, ["y"] = -59, ["z"] = 131.49},
+                    ["type"] = "interact",
+                    ["index"] = 1
+                },
+                [3] = { -- Wait at the designated location.
+                    ["id"] = 2013396, -- Destination
+                    ["mapid"] = 145, -- Eastern Thanalan
+                    ["pos"] = {["x"] = -69.96, ["y"] = -21.01, ["z"] = -10.18},
+                    ["type"] = "interact",
+                    ["interactrange"] = 3,
+                    ["index"] = 2
+                },
+                [4] = { -- Speak with Nananji at Apkallu Falls in Gridania.
+                    ["id"] = 1045618, -- Nananji
+                    ["mapid"] = 133, -- Old Gridania
+                    ["pos"] = {["x"] = -37.43, ["y"] = 11.08, ["z"] = -257.59},
+                    ["type"] = "interact",
+                    ["index"] = 3
+                },
+                [5] = { -- Speak with Nananji near Maelstrom Command.
+                    ["id"] = 1045619, -- Nananji
+                    ["mapid"] = 128, -- Limsa Lominsa Upper Decks
+                    ["pos"] = {["x"] = 24.61, ["y"] = 40, ["z"] = 80.34},
+                    ["type"] = "interact",
+                    ["index"] = 4
+                },
+                [6] = { -- Speak with Nananji again.
+                    ["id"] = 1045619, -- Nananji
+                    ["mapid"] = 128, -- Limsa Lominsa Upper Decks
+                    ["pos"] = {["x"] = 24.61, ["y"] = 40, ["z"] = 80.34},
+                    ["type"] = "complete",
+                    ["index"] = 255
+                }
+            }
+        },
+        [4780] = {
+            ["level"] = 50,
+            ["name"] = "Preserving the Future",
+            ["prereq"] = {
+                ["QuestCompleted(4779)"] = true -- What Drives Us
+            },
+            ["steps"] = {
+                [1] = {
+                    ["id"] = 1045619, -- Nananji
+                    ["mapid"] = 128, -- Limsa Lominsa Upper Decks
+                    ["pos"] = {["x"] = 24.61, ["y"] = 40, ["z"] = 80.34},
+                    ["type"] = "start"
+                },
+                [2] = { -- Speak with Nanji at the Moraby Drydocks.
+                    ["id"] = 1045620, -- Nananji
+                    ["mapid"] = 135, -- Lower La Noscea
+                    ["pos"] = {["x"] = 157.58, ["y"] = 14.1, ["z"] = 685.82},
+                    ["type"] = "interact",
+                    ["index"] = 1
+                },
+                [3] = { -- Gather information at the Moraby Drydocks. 1/3
+                    ["condition"] = {
+                        ["I8A"] = 0,
+                        ["I8F"] = 0,
+                        ["I8FH"] = 0,
+                        ["I8AL"] = 0
+                    },
+                    ["complete"] = {
+                        ["I8A"] = 1,
+                        ["I8F"] = 64,
+                        ["I8FH"] = 4,
+                        ["I8AL"] = 1
+                    },
+                    ["id"] = 1045624, -- Shopkeep
+                    ["mapid"] = 135, -- Lower La Noscea
+                    ["pos"] = {["x"] = 199.51, ["y"] = 14.12, ["z"] = 670.65},
+                    ["type"] = "interact",
+                    ["index"] = 2
+                },
+                [4] = { -- Gather information at the Moraby Drydocks. 2/3
+                    ["condition"] = {
+                        ["I8A"] = 1,
+                        ["I8F"] = 64,
+                        ["I8FH"] = 4,
+                        ["I8AL"] = 1
+                    },
+                    ["complete"] = {
+                        ["I8A"] = 2,
+                        ["I8F"] = 96,
+                        ["I8FH"] = 6,
+                        ["I8AL"] = 2
+                    },
+                    ["id"] = 1045625, -- Veteran Shipwright
+                    ["mapid"] = 135, -- Lower La Noscea
+                    ["pos"] = {["x"] = 217.18, ["y"] = 8.97, ["z"] = 615.78},
+                    ["type"] = "interact",
+                    ["index"] = 2
+                },
+                [5] = { -- Gather information at the Moraby Drydocks. 3/3
+                    ["condition"] = {
+                        ["I8A"] = 2,
+                        ["I8F"] = 96,
+                        ["I8FH"] = 6,
+                        ["I8AL"] = 2
+                    },
+                    ["complete"] = {["step"] = 3},
+                    ["id"] = 1045623, -- Roegadyn Porter
+                    ["mapid"] = 135, -- Lower La Noscea
+                    ["pos"] = {["x"] = 162.68, ["y"] = 8.97, ["z"] = 613.98},
+                    ["type"] = "interact",
+                    ["index"] = 2
+                },
+                [6] = { -- Speak with Nananji.
+                    ["id"] = 1045621, -- Nananji
+                    ["mapid"] = 135, -- Lower La Noscea
+                    ["pos"] = {["x"] = 162.89, ["y"] = 12.13, ["z"] = 637.02},
+                    ["type"] = "interact",
+                    ["index"] = 3
+                },
+                [7] = { -- Survey the designated location southeast of the Moraby Drydocks.
+                    ["id"] = 2013397, -- Destination
+                    ["mapid"] = 135, -- Lower La Noscea
+                    ["pos"] = {["x"] = 247.85, ["y"] = 6.7, ["z"] = 783.51},
+                    ["type"] = "interact",
+                    ["interactrange"] = 3,
+                    ["index"] = 4
+                },
+                [8] = { -- Speak with Nananji.
+                    ["id"] = 1045626, -- Nananji
+                    ["mapid"] = 135, -- Lower La Noscea
+                    ["pos"] = {["x"] = 248.28, ["y"] = 6.78, ["z"] = 784.66},
+                    ["type"] = "interact",
+                    ["index"] = 5
+                },
+                [9] = { -- Speak with Nananji in Ul'dah.
+                    ["id"] = 1045615, -- Nananji
+                    ["mapid"] = 130, -- Ul'dah - Steps of Nald
+                    ["pos"] = {["x"] = -115.8, ["y"] = 4, ["z"] = -101},
+                    ["type"] = "complete",
+                    ["index"] = 255,
+                    ["conversationindex"] = 2
+                }
+            }
+        }
+    }
+}
+return obj1
